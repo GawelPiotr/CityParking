@@ -1,11 +1,11 @@
-#City Parking
+# City Parking
 
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 
 
-##General info 
+## General info 
 
 City Parking is application for managing city parking spaces.
 
@@ -17,7 +17,7 @@ You could choose two type of driver : Regular and VIP.
 
 3. As a parking owner, you can chack how much money was earned durning a given day.
 
-##Technologies
+## Technologies
 * Java 1.8
 * Spring Boot
 * Hibernate
