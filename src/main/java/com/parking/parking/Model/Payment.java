@@ -13,9 +13,15 @@ public class Payment {
     @Column(name = "payment_id")
     private int id;
 
+    /**
+     * @param value - value of payment[zł]
+     */
     @Column(name = "value")
     private double value;
 
+    /**
+     * @param date - date of payment
+     */
     @Column(name = "date")
     private LocalDate date;
 

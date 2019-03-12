@@ -17,12 +17,12 @@ public class OperatorController {
     private DriverService driverService;
 
     /**
-     * checkDriver's checking if selected driver started parking
+     * checkIfDriverStartedParking's checking if selected driver started parking
      * @param driverId - driver's id
      * @return true - if driver started parking, false - if didn't started parking
      */
     @GetMapping("/checkDriver/{driverId}")
-    public Boolean checkDriver(@PathVariable int driverId){
+    public Boolean checkIfDriverStartedParking(@PathVariable int driverId){
         try {
             Driver driver = driverService.findById(driverId);
             if(driver.getStartTime()!= null){

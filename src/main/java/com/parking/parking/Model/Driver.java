@@ -14,23 +14,56 @@ public class Driver {
     @Column(name ="driver_id")
     private Integer id;
 
+    /**
+     * @param fullTime - full time of parking [hours]
+     */
     @Column(name = "full_time")
     private long fullTime;
 
+    /**
+     * @param startTime - date and time of starting parking
+     */
     @Column(name = "start_time")
     private LocalDateTime startTime;
 
+    /**
+     * @param finishTime - date and time of finishing parking
+     */
     @Column(name = "finish_time")
     private LocalDateTime finishTime;
 
+    /**
+     * @param registrationNumber - registration number of parking vehicle
+     */
     @Column(name = "registration_number")
     private String registrationNumber;
 
+    /**
+     * @param valueToPay - value to pay after finishing parking [zł]
+     */
     @Column(name = "value_to_pay")
     private double valueToPay;
 
+    /**
+     * @param typeOfDrivers - type of Drivers : Regular or Vip
+     */
     @Column
     private String typeOfDrivers;
+
+    public Driver(){}
+
+    public Driver(Integer id, String registrationNumber, long fullTime){
+        this.id = id;
+        this.registrationNumber = registrationNumber;
+        this.fullTime= fullTime;
+    }
+
+    public Driver(Integer id, long fullTime, String typeOfDrivers){
+        this.id = id;
+        this.fullTime = fullTime;
+        this.typeOfDrivers = typeOfDrivers;
+    }
+
 
     public Integer getId() {
         return id;

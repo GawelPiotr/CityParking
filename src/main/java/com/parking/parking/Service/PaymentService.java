@@ -58,24 +58,24 @@ public class PaymentService {
         }else if(parkingTime > 1 && parkingTime <= 2) {
             howMuchToPay = 2;
         }else {
-            double howToPay = 2*Math.pow(1.2,(parkingTime-2));
-            double sto = howToPay*100;
-            double dwa = Math.round(sto);
-            howMuchToPay = dwa/100;
+            double mathFunction = 2*Math.pow(1.2,(parkingTime-2));
+            double multi = mathFunction*100;
+            double round = Math.round(multi);
+            howMuchToPay = round/100;
         }
         return  howMuchToPay;
     }
 
     /**
-     * checkpayments's counting how much money was earned during a given day
+     * checkEarned's counting how much money was earned during a given day
      * @param date - is selected day
      * @return value of earned during a given day
      */
-    public double checkEarned(LocalDate date){
+    public Double checkEarned(LocalDate date){
         try {
             return paymentRepository.findAllByDate(date);
         }catch (NullPointerException e){
-            return 1100;
+            return null;
         }
     }
 
@@ -84,7 +84,7 @@ public class PaymentService {
      * @param driverId - driver's id
      * @return how much money driver has to pay
      */
-    public Double peyment(int driverId){
+    public Double payment(int driverId){
         try {
         Driver driver = driverService.findById(driverId);
             if (driver.getTypeOfDrivers().equals("Regular")) {

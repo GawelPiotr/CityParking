@@ -19,12 +19,12 @@ public class OwnerController {
     private PaymentService paymentService;
 
     /**
-     * checkPayments's checking how much much money was earned during a given day
+     * checkEarnedDuringDay's checking how much much money was earned during a given day
      * @param date - date of day witch Owner wants to check
      * @return - value of earned during a given day
      */
-    @PostMapping("/checkPayments")
-    public double checkPayments(@RequestBody Payment date){
+    @PostMapping("/checkEarned")
+    public double checkEarnedDuringDay(@RequestBody Payment date){
        LocalDate date1 = date.getDate();
         return paymentService.checkEarned(date1);
     }

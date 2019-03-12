@@ -26,13 +26,12 @@ public class DriverController {
 
 
     /**
-     * addDriver's saving new Driver
+     * addNewDriver's saving new Driver
      * @param newDriver - Object Driver from body
      * @return driver's fields
      */
-
-    @PostMapping("/addDriver")
-    public Driver addDriver(@RequestBody Driver newDriver){
+    @PostMapping("/addNewDriver")
+    public Driver addNewDriver(@RequestBody Driver newDriver){
         return driverService.addNewDriver(newDriver);
     }
 
@@ -66,14 +65,14 @@ public class DriverController {
     }
 
     /**
-     * payment's generate value to pay for the selected driver
+     * paymentForParking's generate value to pay for the selected driver
      * @param driverId - driver's id
      * @return - shows vale to pay
      */
     @PostMapping("/payment/{driverId}")
-    public Double payment(@PathVariable int driverId){
+    public Double paymentForParking(@PathVariable int driverId){
         try {
-            return paymentService.peyment(driverId);
+            return paymentService.payment(driverId);
         }catch (NullPointerException e){
             return null;
         }

@@ -55,7 +55,6 @@ public class DriverService {
             Driver driver = findById(driverId);
             LocalDateTime startTime = LocalDateTime.now();
             driver.setStartTime(startTime);
-            System.out.println("Local Date and Time :" + startTime);
             driverRepository.save(driver);
             return startTime;
         } catch (NullPointerException e){
